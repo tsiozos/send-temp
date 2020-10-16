@@ -11,7 +11,7 @@ basic.forever(function on_forever() {
             basic.pause(1000)
         }
         led.toggle(2, 2)
-        radio.sendValue("" + control.deviceSerialNumber() + ".temp", t / 10)
+        radio.sendValue("temp", Math.roundWithPrecision(t / 10, 2))
         basic.pause(500)
         led.toggle(2, 2)
     }

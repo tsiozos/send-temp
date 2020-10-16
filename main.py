@@ -10,7 +10,7 @@ def on_forever():
             t+=input.temperature()
             basic.pause(1000)
         led.toggle(2, 2)
-        radio.send_value(str(control.device_serial_number())+".temp", t/10)
+        radio.send_value("temp", Math.round_with_precision(t/10, 2))
         basic.pause(500)
         led.toggle(2, 2)
 
